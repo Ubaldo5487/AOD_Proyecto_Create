@@ -38,7 +38,7 @@ class CellphoneController extends Controller
     {
         $cellphone = request()->except('_token');
         Cellphone::insert($cellphone);
-        return view('cellphones.index');
+        return redirect()->to(url('/cellphones'));
     }
 
     /**
@@ -49,7 +49,7 @@ class CellphoneController extends Controller
      */
     public function show(Cellphone $cellphone)
     {
-        //
+        return view('cellphones.show', compact('cellphone'));
     }
 
     /**
@@ -60,7 +60,7 @@ class CellphoneController extends Controller
      */
     public function edit(Cellphone $cellphone)
     {
-        //
+        return view('cellphones.edit', compact('cellphone'));
     }
 
     /**
@@ -72,7 +72,9 @@ class CellphoneController extends Controller
      */
     public function update(Request $request, Cellphone $cellphone)
     {
-        //
+        $dataCellphone = request()->except('_token');
+        $cellphone->update($dataCellphone);
+        return redirect()->to(url('/cellphones'));
     }
 
     /**
@@ -83,6 +85,7 @@ class CellphoneController extends Controller
      */
     public function destroy(Cellphone $cellphone)
     {
-        //
+        $cellphone->delete();
+        return redirect()->to(url('/cellphones'));
     }
 }

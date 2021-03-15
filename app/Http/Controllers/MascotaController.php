@@ -38,7 +38,7 @@ class MascotaController extends Controller
     {
         $mascotas = request()->except('_token');
         Mascota::insert($mascotas);
-        return view('pets.index');
+        return redirect()->to(url('/pets'));
     }
 
     /**
@@ -49,7 +49,7 @@ class MascotaController extends Controller
      */
     public function show(Mascota $mascota)
     {
-        //
+        return view('pets.show', compact('mascota'));
     }
 
     /**
@@ -60,7 +60,7 @@ class MascotaController extends Controller
      */
     public function edit(Mascota $mascota)
     {
-        //
+        return view('pets.edit', compact('mascota'));
     }
 
     /**
@@ -72,7 +72,9 @@ class MascotaController extends Controller
      */
     public function update(Request $request, Mascota $mascota)
     {
-        //
+        $dataMascota = request()->except('_token');
+        $mascota->update($dataMascota);
+        return redirect()->to(url('/pets'));
     }
 
     /**
@@ -83,6 +85,7 @@ class MascotaController extends Controller
      */
     public function destroy(Mascota $mascota)
     {
-        //
+        $mascota->delete();
+        return redirect()->to(url('/pets'));
     }
 }

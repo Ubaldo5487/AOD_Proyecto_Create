@@ -29,3 +29,7 @@ Route::resources([
     'songs' => SongController::class,
     'pets' => MascotaController::class
 ]);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

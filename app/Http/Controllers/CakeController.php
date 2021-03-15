@@ -38,7 +38,7 @@ class CakeController extends Controller
     {
         $cakes = request()->except('_token');
         cake::insert($cakes);
-        return view('cakes.index');
+        return redirect()->to(url('/cakes'));
     }
 
     /**
@@ -49,7 +49,7 @@ class CakeController extends Controller
      */
     public function show(cake $cake)
     {
-        //
+        return view('cakes.show', compact('cake'));
     }
 
     /**
@@ -60,7 +60,7 @@ class CakeController extends Controller
      */
     public function edit(cake $cake)
     {
-        //
+        return view('cakes.edit', compact('cake'));
     }
 
     /**
@@ -72,7 +72,9 @@ class CakeController extends Controller
      */
     public function update(Request $request, cake $cake)
     {
-        //
+        $dataCake = request()->except('_token');
+        $cake->update($dataCake);
+        return redirect()->to(url('/cakes'));
     }
 
     /**
@@ -83,6 +85,7 @@ class CakeController extends Controller
      */
     public function destroy(cake $cake)
     {
-        //
+        $cake->delete();
+        return redirect()->to(url('/cakes'));
     }
 }

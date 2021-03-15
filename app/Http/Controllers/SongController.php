@@ -38,7 +38,7 @@ class SongController extends Controller
     {
         $songs = request()->except('_token');
         Song::insert($songs);
-        return view('songs.index');
+        return redirect()->to(url('/songs'));
     }
 
     /**
@@ -49,7 +49,7 @@ class SongController extends Controller
      */
     public function show(Song $song)
     {
-        //
+        return view('songs.show', compact('song'));
     }
 
     /**
@@ -60,7 +60,7 @@ class SongController extends Controller
      */
     public function edit(Song $song)
     {
-        //
+        return view('songs.edit', compact('song'));
     }
 
     /**
@@ -72,7 +72,9 @@ class SongController extends Controller
      */
     public function update(Request $request, Song $song)
     {
-        //
+        $dataSong = request()->except('_token');
+        $song->update($dataSong);
+        return redirect()->to(url('/songs'));
     }
 
     /**
@@ -83,6 +85,7 @@ class SongController extends Controller
      */
     public function destroy(Song $song)
     {
-        //
+        $song->delete();
+        return redirect()->to(url('/songs'));
     }
 }

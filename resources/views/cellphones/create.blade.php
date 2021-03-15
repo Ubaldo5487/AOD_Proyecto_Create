@@ -1,108 +1,95 @@
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 <div class="container">
-    <h1>Formilario Para Agregar Un Celular</h1>
+    <h1>Formulario Para Agregar Un Celular</h1>
 
     <form action="{{ route('cellphones.store') }}" method="post">
 
         @csrf
 
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Marca: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="brand" id="" placeholder="Marca" required>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Marca: </label>
+                <input class=" form-control" type="text" name="brand" id="" placeholder="Marca" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Modelo: </label>
+                <input class=" form-control" type="text" name="model" id="" placeholder="Modelo" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Color: </label>
+                <input class=" form-control" type="text" name="color" id="" placeholder="Color" required>
             </div>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Modelo: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="model" id="" placeholder="Modelo" required>
+        <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Número de camaras: </label>
+                <input class=" form-control" type="number" name="camNumber" id="" placeholder="Número De Cámaras" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Cámara Trasera En Px: </label>
+                <input class=" form-control" type="number" name="rearCamera_px" id="" placeholder="Cámara Trasera En Px" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Cámara Frontal En Px: </label>
+                <input class=" form-control" type="number" name="frontalCamera_px" id="" placeholder="Cámara Frontal En Px" required>
             </div>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Color: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="color" id="" placeholder="Color" required>
+        <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Tamaño De Pantalla: </label>
+                <input class=" form-control" type="text" name="screenSize" id="" placeholder="Tamaño De Pantalla" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Resolución De La Pantalla: </label>
+                <input class=" form-control" type="text" name="screenResolution" id="" placeholder="Resolución De La Pantalla" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Capacidad De Memoria: </label>
+                <input class=" form-control" type="number" name="memory" id="" placeholder="Memoria" required>
             </div>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Número de camaras: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="camNumber" id="" placeholder="Número De Cámaras" required>
+        <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">RAM: </label>
+                <input class=" form-control" type="number" name="ram" id="" placeholder="Número de ram" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Tipo De Sistema: </label>
+                <input class=" form-control" type="text" name="typeOfSystem" id="" placeholder="Tipo De Sistema" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Versión De Sistema: </label>
+                <input class=" form-control" type="text" name="systemVersion" id="" placeholder="Versión De Sistema" required>
             </div>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Cámara Trasera En Px: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="rearCamera_px" id="" placeholder="Cámara Trasera En Px" required>
+        <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Capacidad De Bateria: </label>
+                <input class=" form-control" type="number" name="batteryCapacity" id="" placeholder="Capacidad De Bateria" required>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
+                <label for="">Velocidad De Carga: </label>
+                <input class=" form-control" type="number" name="loadingspeed" id="" placeholder="Velocidad De Carga" required>
             </div>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Cámara Frontal En Px: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="frontalCamera_px" id="" placeholder="Cámara Frontal En Px" required>
-            </div>
+        <br>
+        <div>
+            <label for="">Descripción: </label>
+            <textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Tamaño De Pantalla: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="screenSize" id="" placeholder="Tamaño De Pantalla" required>
-            </div>
+        <br>
+        <div>
+            <label for="">Comentario: </label>
+            <input class="form-control" type="text" name="comment" id="" placeholder="Comentario">
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Resolución De La Pantalla: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="screenResolution" id="" placeholder="Resolución De La Pantalla" required>
-            </div>
+        <br>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <input class="btn btn-info" type="reset" value="Restablecer">
+            <input class="btn btn-primary text-left" type="submit" value="Guardar">
         </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Capacidad De Memoria: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="memory" id="" placeholder="Memoria" required>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">RAM: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="ram" id="" placeholder="Número de ram" required>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Tipo De Sistema: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="typeOfSystem" id="" placeholder="Tipo De Sistema" required>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Versión De Sistema: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="systemVersion" id="" placeholder="Versión De Sistema" required>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Capacidad De Bateria: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="batteryCapacity" id="" placeholder="Capacidad De Bateria" required>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Velocidad De Carga: </label>
-            <div class="col-10">
-                <input class="form-control" type="number" name="loadingspeed" id="" placeholder="Velocidad De Carga" required>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Descripción: </label>
-            <div class="col-10">
-                <textarea class="form-control" name="description" id="" cols="30" rows="10" required></textarea>
-            </div>
-        </div>
-        <div class="mb-3 row">
-            <label class="col-sm-2 text-end" for="">Comentario: </label>
-            <div class="col-10">
-                <input class="form-control" type="text" name="comment" id="" placeholder="Comentario" required>
-            </div>
-        </div>
-            <input class="btn btn-primary" type="submit" value="Guardar">
-
     </form>
-</div>  
+</div>
