@@ -10,7 +10,8 @@ class Cellphone extends Model
     use HasFactory;
 
     protected $fillable = [
-        'band',
+        'image',
+        'brand',
         'model',
         'color',
         'camNumber',

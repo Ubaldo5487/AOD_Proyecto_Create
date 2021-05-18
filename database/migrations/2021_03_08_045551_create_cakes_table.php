@@ -15,6 +15,7 @@ class CreateCakesTable extends Migration
     {
         Schema::create('cakes', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
             $table->string('client_name', 100);
             $table->string('client_direction', 255);
             $table->string('ingredient', 500);
@@ -22,7 +23,7 @@ class CreateCakesTable extends Migration
             $table->integer('quantity');
             $table->string('size', 255);
             $table->text('description');
-            $table->string('comment')->nullable();
+            $table->string('comment', 255)->nullable();
             $table->tinyInteger('available')->default(1);
             $table->timestamps();
         });

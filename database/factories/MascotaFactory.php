@@ -22,7 +22,13 @@ class MascotaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'species'           => $this ->faker->word,
+            'name'              => $this ->faker->word,
+            'race'              => $this ->faker->word,
+            'age'               => $this ->faker->randomDigit,
+            'color'             => $this ->faker->colorName,
+            'size'              => $this ->faker->word,
+
         ];
     }
 }

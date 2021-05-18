@@ -22,7 +22,15 @@ class CakeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'client_name'           => $this->faker->word,
+            'client_direction'      => $this->faker->streetAddress,
+            'ingredient'            => $this->faker->word,
+            'taste'                 => $this->faker->word,
+            'quantity'              => $this->faker->randomDigitNot(0, 7, 8, 9),
+            'size'                  => $this->faker->word,
+            'description'           => $this->faker->text($maxNbChars = 100),
+            'comment'               => $this->faker->text($maxNbChars = 100),
+            'available'             => $this->faker->randomDigitNot(2, 3, 4, 5, 6, 7, 8, 9),
         ];
     }
 }

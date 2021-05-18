@@ -1,12 +1,20 @@
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+@extends('layouts.dashboard')
+
+@section('content')
+
 <div class="container">
     <h1>Formulario Para Agregar Un Pastel</h1>
 
-    <form action="{{ route('cakes.store') }}" method="post">
+    <form action="{{ route('cakes.store') }}" method="post" enctype="multipart/form-data">
 
         @csrf
-
-        <div class="row">
+        <div class="row mb-3">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+                <label for="">Imagen:</label>
+                <input type="file" name="image" id="" accept="image/*" required>
+            </div>
+        </div>
+        <div class="row md-3">
             <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
                 <label for="">Nombre Del Cliente: </label>
                 <input class="form-control" type="text" name="client_name" id="" placeholder="Nombre Del Cliente" required>
@@ -21,7 +29,7 @@
             </div>
         </div>
         <br>
-        <div class="row">
+        <div class="row md-3">
             <div class="col-xs-12 col-sm-4 col-md-4 col-xl-4">
                 <label for="">Sabor: </label>
                 <input class="form-control" type="text" name="taste" id="" placeholder="Sabor Del Pastel" required>
@@ -52,3 +60,5 @@
         </div>
     </form>
 </div>
+
+@endsection

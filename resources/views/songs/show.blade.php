@@ -1,4 +1,6 @@
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+@extends('layouts.dashboard')
+
+@section('content')
 
 <div class="container">
     <br><br>
@@ -71,3 +73,5 @@
         </div>
     </div>
 </div>
+
+@endsection

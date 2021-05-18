@@ -15,6 +15,7 @@ class CreateCellphonesTable extends Migration
     {
         Schema::create('cellphones', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
             $table->string('brand', 100);
             $table->string('model', 50);
             $table->string('color', 50)->nullable();

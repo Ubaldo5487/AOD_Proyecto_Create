@@ -10,6 +10,7 @@ class cake extends Model
     use HasFactory;
 
     protected $fillable = [
+        'image',
         'description',
         'client_name',
         'client_direction',

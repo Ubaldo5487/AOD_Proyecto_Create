@@ -1,5 +1,6 @@
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+@extends('layouts.dashboard')
 
+@section('content')
 <div class="container">
     <br><br>
     <div class="card">
@@ -7,7 +8,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="card-title">
-                        <h2> {{ $mascota->name}} </h2>
+                        <h2> {{ $mascota->client_name}} </h2>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -38,19 +39,19 @@
                             <p>Imagen</p>
                         </td>
                         <td>
-                            <p><b> {{ $mascota->species}} </b></p>
+                            <p><b>{{ $mascota->species}}</b></p>
                         </td>
                         <td>
-                            <p><b> {{ $mascota->race}} </b></p>
+                            <p><b>{{ $mascota->race}} </b></p>
                         </td>
                         <td>
-                            <p><b> {{ $mascota->age}} </b></p>
+                            <p><b>{{ $mascota->age}} </b></p>
                         </td>
                         <td>
-                            <p><b> {{$mascota->color}} </b></p>
+                            <p><b>{{ $mascota->color}} </b></p>
                         </td>
                         <td>
-                            <p><b> {{$mascota->size}} </b></p>
+                            <p><b>{{ $mascota->size}} </b></p>
                         </td>
                     </tr>
                 </tbody>
@@ -71,3 +72,5 @@
         </div>
     </div>
 </div>
+
+@endsection

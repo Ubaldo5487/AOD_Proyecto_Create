@@ -22,7 +22,13 @@ class SongFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title'             => $this->faker->word,
+            'album'             => $this->faker->word,
+            'autor'             => $this->faker->word,
+            'genere'            => $this->faker->word,
+            'duration'          => $this->faker->word,
+            'date'              => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'available'         => $this->faker->randomDigitNot(2, 3, 4, 5, 6, 7, 8, 9),
         ];
     }
 }

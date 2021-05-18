@@ -1,4 +1,6 @@
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+@extends('layouts.dashboard')
+
+@section('content')
 <div class="container">
     <h1>Actualizar Datos Del Pastel De <b>{{ $cake->client_name}}</b></h1>
 
@@ -54,3 +56,5 @@
         </div>
     </form>
 </div>
+
+@endsection
